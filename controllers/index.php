@@ -15,7 +15,7 @@ class Index extends Controller {
         //echo Hash::create('sha256', 'jesse', HASH_PASSWORD_KEY);
         //echo Hash::create('sha256', 'test2', HASH_PASSWORD_KEY);
         //$this->view->empresa = $this->model->ObtenerEmpresa(EMPRESA);
-        $this->view->title = 'Titulo aqui';
+        $this->view->title = APP_INDEX_TITLE;
         $this->view->render('header');
         $this->view->render('index/index');
         $this->view->render('footer');

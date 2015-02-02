@@ -11,6 +11,7 @@ define('DB_PASS', "");
 define('APP_NAME','Ecommerce administracion');
 define('MIEMPRESA', 1);
 define('APP_VERSION','1.0');
+define('APP_INDEX_TITLE', 'titulo aqui');
 
 define('HASH_GENERAL_KEY', 'MixitUp200');
 define('HASH_PASSWORD_KEY', 'M3gaS3nd20014R3leAs3');
