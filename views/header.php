@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><?php echo (isset($this->title)) ? $this->title : 'APP'; ?></title>
+    <title><?=(isset($this->title)) ? $this->title : 'APP'; ?></title>
     <link rel="stylesheet" href="<?php echo URL; ?>public/css/default.css" />
     <link rel="stylesheet" href="<?php echo URL; ?>public/boostrap/css/bootstrap.css" />
     <link rel="stylesheet" href="<?php echo URL; ?>public/boostrap/css/bootstrap-dialog.css" />
@@ -31,7 +31,7 @@
 <?php Session::init(); ?>
 <header id="header">
     <?php if(isset($this->empresa[0]['Empresa'])) :?>
-        <span class="icon-bookmarks" style="float: left;display: inline-table;font-size: 22px;color: #A9C513;margin-right: 5px;"></span><h3 style="display:inline-block; float:left;margin:0px;" class="light animated fadeInLeft"><?php echo (isset($this->empresa[0]['Empresa'])) ? $this->empresa[0]['Empresa'] : ''; ?></h3>
+        <span class="icon-bookmarks" style="float: left;display: inline-table;font-size: 22px;color: #A9C513;margin-right: 5px;"></span><h3 style="display:inline-block; float:left;margin:0px;" class="light animated fadeInLeft"><?=(isset($this->empresa[0]['Empresa'])) ? $this->empresa[0]['Empresa'] : ''; ?></h3>
     <?php endif; ?>
     <div id="logo">
     </div>
