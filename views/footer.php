@@ -1,9 +1,7 @@
-
 </div>
-
 <div id="footer">
 	<div id="copyright">
-		<p>Todos los derechos reservados <?php echo APP_NAME;?> <br /><span class="icon-office" style="color:#E2B608;"></span><?=(isset($this->empresa[0]['Ciudad'])) ? $this->empresa[0]['Ciudad'] : ''; ?><br /><a href="#" class="terms">Terminos y Condiciones</a></p>
+		<p>Todos los derechos reservados <?php echo APP_NAME;?> <br /><span class="icon-office" style="color:#E2B608;"></span><?php echo (isset($this->empresa[0]['Ciudad'])) ? $this->empresa[0]['Ciudad'] : ''; ?><br /><a href="#" class="terms">Terminos y Condiciones</a></p>
 	</div>
 </div>    
 <?php
