@@ -4,7 +4,7 @@
 <div class="form">
 	<form enctype="multipart/form-data" >
 		<div class="colset-1 form-element-margin">
-			<input type="text" value="" id="txtDescripcion" placeholder="descripcion" class="form-control letters animated fadeInLeft">
+			<input type="text" value="" id="txtDescripcion" placeholder="descripcion" class="form-control alpha animated fadeInLeft">
 		</div>
 		<select id="cmbEstado" class="select-block" data-style="darkYellow" style="width:100%;display:inline-block;">
 		</select>

@@ -3,7 +3,7 @@
 </div>
 <div class="colset-3">
 	<div class="colset-1 form-element-margin">
-		<input type="text" value="" id="txtProductoDescripcion" placeholder="descripcion" class="form-control letters" style="z-index:99999;">
+		<input type="text" value="" id="txtProductoDescripcion" placeholder="descripcion" class="form-control alpha" style="z-index:99999;">
 	</div>
 	<div class="colset-1 form-element-margin">
 		<select id="cmbEstado"  class="select-block" data-style="darkYellow" style="width:100%; display:inline-block;">
