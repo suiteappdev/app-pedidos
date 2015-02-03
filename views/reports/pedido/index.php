@@ -4,9 +4,9 @@
 
 		</div>
 		<div id="info">
-			<h3 class="centered">COSMETICOS JOHNVERY S.A.S.</h3>
-			<p class="centered text">www.johnvery.com</p>
-			<p class="centered text">NIT: 900136121</p>
+			<h3 class="centered">ECOMMERCE</h3>
+			<p class="centered text">www.suiteapp.net</p>
+			<p class="centered text">NIT: 1103012286</p>
 		</div>
 	</div>
 	<div class="colset-1" style="height:130px;">

@@ -35,7 +35,7 @@ class Dashboard extends Controller {
     }
     
     function index(){
-        $this->view->title = 'johnvery app';
+        $this->view->title = APP_INDEX_TITLE;
         $this->view->render('header');
         $this->view->render('dashboard/index');
         $this->view->render('footer');
