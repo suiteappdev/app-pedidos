@@ -6,10 +6,10 @@ class Cliente_Model extends Model{
 	}
 
     public function ObtenerListaDeClientes(){
-        return $this->db->select('SELECT * FROM clientes WHERE tipocliente = 1');
+        return $this->db->select('SELECT * FROM cliente WHERE tipocliente = 1');
     }
 
     public function BusquedaClientes($data){
-        return $this->db->select("SELECT  * FROM clientes WHERE tipocliente = 2 and LOWER(CONCAT(nombres, ' ', apellidos)) like '%$data%' limit 5");
+        return $this->db->select("SELECT  * FROM cliente WHERE tipocliente = 2 and LOWER(CONCAT(nombres, ' ', apellidos)) like '%$data%' limit 5");
     }
 }

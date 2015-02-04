@@ -7,7 +7,7 @@ class Pedido_Model extends Model{
 
     public function EnviarPedido($data){
         try {
-                $id =  $this->db->insert('pedidos',
+                $id =  $this->db->insert('pedido',
                     array(
                         'identificacion' => $data['identificacion'],
                         'subtotal' => $data['subtotal'],
@@ -46,7 +46,7 @@ class Pedido_Model extends Model{
             die();
         }
 
-        $this->agregarDetallepedido($data['productos'], $id);
+        $this->agregarDetallepedido($data['producto'], $id);
 
         return $id;
 
@@ -79,13 +79,13 @@ class Pedido_Model extends Model{
     }
 
     function ObtenerPedidos($data){
-        return $this->db->select('SELECT ped.idpedido,   est.descripcion, ped.geolocalizacion,  concat(cli.nombres," ",cli.apellidos) as nombrecompleto, ped.total, ped.fechapedido, ped.estado FROM pedidos AS ped INNER JOIN clientes AS cli INNER JOIN estadospedidos AS est WHERE ped.idvendedor = :idvendedor AND ped.identificacion = cli.identificacion AND ped.estado = est.id',
+        return $this->db->select('SELECT ped.idpedido,   est.descripcion, ped.geolocalizacion,  concat(cli.nombres," ",cli.apellidos) as nombrecompleto, ped.total, ped.fechapedido, ped.estado FROM pedido AS ped INNER JOIN cliente AS cli INNER JOIN estadopedido AS est WHERE ped.idvendedor = :idvendedor AND ped.identificacion = cli.identificacion AND ped.estado = est.id',
                 array(':idvendedor' => $data['idvendedor'])
             );
     }
 
     function obtenerTodosLosPedidos($data){
-        return $this->db->select('SELECT ped.idpedido,ped.observacion,  concat(cli2.nombres," ",cli2.apellidos) as vendedor, ped.tunidades,  est.descripcion, ped.geolocalizacion,  concat(cli.nombres," ",cli.apellidos) as nombrecompleto, ped.fechapedido, ped.idvendedor, ped.estado, ped.subtotal, ped.dto1, ped.vdcto1, ped.dto2, ped.vdcto2, ped.dto3, ped.vdcto3, ped.iva,ped.totaldescuento, ped.total, ped.iva1, ped.iva2, ped.iva3, ped.valriva1, ped.valriva2, ped.valriva3, baseimp1, baseimp2, baseimp3 FROM pedidos as ped INNER JOIN clientes as cli INNER JOIN clientes as cli2 INNER JOIN estadospedidos as est WHERE ped.identificacion = cli.identificacion and ped.estado = est.id and ped.idvendedor = cli2.identificacion '.$data);
+        return $this->db->select('SELECT ped.idpedido,ped.observacion,  concat(cli2.nombres," ",cli2.apellidos) as vendedor, ped.tunidades,  est.descripcion, ped.geolocalizacion,  concat(cli.nombres," ",cli.apellidos) as nombrecompleto, ped.fechapedido, ped.idvendedor, ped.estado, ped.subtotal, ped.dto1, ped.vdcto1, ped.dto2, ped.vdcto2, ped.dto3, ped.vdcto3, ped.iva,ped.totaldescuento, ped.total, ped.iva1, ped.iva2, ped.iva3, ped.valriva1, ped.valriva2, ped.valriva3, baseimp1, baseimp2, baseimp3 FROM pedido as ped INNER JOIN cliente as cli INNER JOIN cliente as cli2 INNER JOIN estadopedido as est WHERE ped.identificacion = cli.identificacion and ped.estado = est.id and ped.idvendedor = cli2.identificacion '.$data);
     }
 
     function actualizarEstadoPedido($data){

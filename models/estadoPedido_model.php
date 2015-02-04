@@ -7,21 +7,21 @@ class estadoPedido_Model extends Model
     }
     
     public function crearEstadoPedido($val){
-    	return $this->db->insert('estadospedidos',
+    	return $this->db->insert('estadopedido',
     		array('descripcion' => $val['descripcion'])
     		);
     }
 
     public function listaDeEstadoPedidos(){
-    	return $this->db->select('SELECT * FROM estadospedidos');
+    	return $this->db->select('SELECT * FROM estadopedido');
     }
 
     public function borrarEstadoPedido($data){
-    	return $this->db->delete('estadospedidos', 'id ='.$data['id'], 1);
+    	return $this->db->delete('estadopedido', 'id ='.$data['id'], 1);
     }
 
     public function actualizarEstadoPedido($data){
-    	return $this->db->update('estadospedidos',
+    	return $this->db->update('estadopedido',
             array(
                 'descripcion' => $data['descripcion']
                 ), 'id ='.$data['id']

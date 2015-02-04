@@ -7,7 +7,7 @@ class estadoCliente_Model extends Model
     }
     
     public function crearEStadoCliente($val){
-    	return $this->db->insert('estadosclientes',
+    	return $this->db->insert('estadocliente',
     		array(
                 'descripcion' => $val['descripcion']
                 )
@@ -15,15 +15,15 @@ class estadoCliente_Model extends Model
     }
 
     public function listaDeEstadoClientes(){
-    	return $this->db->select('SELECT * FROM estadosclientes');
+    	return $this->db->select('SELECT * FROM estadocliente');
     }
 
     public function borrarEstadoCliente($data){
-    	return $this->db->delete('estadosclientes', 'id ='.$data['id'], 1);
+    	return $this->db->delete('estadocliente', 'id ='.$data['id'], 1);
     }
 
     public function actualizarEstadoCliente($data){
-    	return $this->db->update('estadosclientes',
+    	return $this->db->update('estadocliente',
             array(
                 'descripcion' => $data['descripcion']
                 ), 'id ='.$data['id']

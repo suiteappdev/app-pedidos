@@ -6,7 +6,7 @@ class Referencia_Model extends Model{
 	}
 
     public function obtenerReferencia($data){
-        return $this->db->select('SELECT ref.referencia FROM referenciasalterna as ref inner join productos as pro WHERE ref.idproducto = pro.id and ref.idproducto = :idproducto',
+        return $this->db->select('SELECT ref.referencia FROM referenciaalterna as ref inner join producto as pro WHERE ref.idproducto = pro.id and ref.idproducto = :idproducto',
          array(
                 ':idproducto' => $data['idproducto']
                 )
@@ -20,15 +20,15 @@ class Referencia_Model extends Model{
     }
 
     public function listaDeReferencias(){
-        return $this->db->select('SELECT * FROM referenciasalterna');
+        return $this->db->select('SELECT * FROM referenciaalterna');
     }
 
     public function borrarReferencia($data){
-        return $this->db->delete('referenciasalterna', 'id ='.$data['id'], 1);
+        return $this->db->delete('referenciaalterna', 'id ='.$data['id'], 1);
     }
 
     public function actualizarReferencia($data){
-        return $this->db->update('referenciasalterna',
+        return $this->db->update('referenciaalterna',
             array(
                 'descripcion' => $data['descripcion']
                 ), 'id ='.$data['id']

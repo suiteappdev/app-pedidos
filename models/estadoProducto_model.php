@@ -7,21 +7,21 @@ class estadoProducto_Model extends Model
     }
     
     public function crearEstadoProducto($val){
-    	return $this->db->insert('estadoproductos',
+    	return $this->db->insert('estadoproducto',
     		array('descripcion' => $val['descripcion'])
     		);
     }
 
     public function listaDeEstadoProductos(){
-    	return $this->db->select('SELECT * FROM estadoproductos');
+    	return $this->db->select('SELECT * FROM estadoproducto');
     }
 
     public function borrarEstadoProducto($data){
-    	return $this->db->delete('estadoproductos', 'id ='.$data['id'], 1);
+    	return $this->db->delete('estadoproducto', 'id ='.$data['id'], 1);
     }
 
     public function actualizarEstadoProducto($data){
-    	return $this->db->update('estadoproductos',
+    	return $this->db->update('estadoproducto',
             array(
                 'descripcion' => $data['descripcion']
                 ), 'id ='.$data['id']
