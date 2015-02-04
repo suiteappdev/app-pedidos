@@ -7,11 +7,11 @@ class lineaPrecio_Model extends Model
     }
     
     public function crearLineaPrecio($val){
-    	$linea =  $this->db->insert('lineasdeprecio',
+    	$linea =  $this->db->insert('lineadeprecio',
     		array('descripcion' => $val['descripcion'])
     		);
 
-        $productos = $this->db->select('SELECT * FROM productos');
+        $productos = $this->db->select('SELECT * FROM producto');
         
         if($productos){
             foreach ($productos as $value) {
@@ -26,16 +26,16 @@ class lineaPrecio_Model extends Model
     }
 
     public function listaDeLineaPrecios(){
-    	return $this->db->select('SELECT * FROM lineasdeprecio');
+    	return $this->db->select('SELECT * FROM lineadeprecio');
 
     }
 
     public function borrarLineaPrecio($data){
-    	return $this->db->delete('lineasdeprecio', 'id ='.$data['id'], 1);
+    	return $this->db->delete('lineadeprecio', 'id ='.$data['id'], 1);
     }
 
     public function actualizarLineaPrecio($data){
-    	return $this->db->update('lineasdeprecio',
+    	return $this->db->update('lineadeprecio',
             array(
                 'descripcion' => $data['descripcion']
                 ), 'id ='.$data['id']

@@ -7,23 +7,23 @@ class Zona_Model extends Model
     }
     
     public function crearZona($val){
-    	return $this->db->insert('zonas',
+    	return $this->db->insert('zona',
     		array(
                 'descripcion' => $val['descripcion']
                 )
     		);
     }
 
-    public function listaDeZonas(){
-    	return $this->db->select('SELECT * FROM zonas');
+    public function listaDeZona(){
+    	return $this->db->select('SELECT * FROM zona');
     }
 
     public function borrarZona($data){
-    	return $this->db->delete('zonas', 'id ='.$data['id'], 1);
+    	return $this->db->delete('zona', 'id ='.$data['id'], 1);
     }
 
     public function actualizarZona($data){
-    	return $this->db->update('zonas',
+    	return $this->db->update('zona',
             array(
                 'descripcion' => $data['descripcion']
                 ), 'id ='.$data['id']

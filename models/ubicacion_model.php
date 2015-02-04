@@ -7,7 +7,7 @@ class Ubicacion_Model extends Model
     }
     
     public function crearUbicacion($val){
-    	return $this->db->insert('zonasalternas',
+    	return $this->db->insert('zonaalterna',
     		array(
                 'iddepartamento' => $val['iddepartamento'],
                 'idzona' => $val['idzona']
@@ -16,15 +16,15 @@ class Ubicacion_Model extends Model
     }
 
     public function listaDeUbicaciones($condition){
-        return $this->db->select('SELECT dep.descripcion, zalt.id FROM zonasalternas as zalt INNER JOIN zonas as zon INNER JOIN departamento as dep WHERE zon.id = zalt.idzona and zalt.iddepartamento = dep.id '.$condition);
+        return $this->db->select('SELECT dep.descripcion, zalt.id FROM zonaalterna as zalt INNER JOIN zonas as zon INNER JOIN departamento as dep WHERE zon.id = zalt.idzona and zalt.iddepartamento = dep.id '.$condition);
     }
 
     public function borrarUbicacion($data){
-    	return $this->db->delete('zonasalternas', 'id ='.$data['id'], 1);
+    	return $this->db->delete('zonaalterna', 'id ='.$data['id'], 1);
     }
 
     public function actualizarUbicacion($data){
-    	return $this->db->update('zonasalternas',
+    	return $this->db->update('zonaalterna',
             array(
                 'idzona' => $data['idzona'],
                 'iddepartamento' => $data['iddepartamento']

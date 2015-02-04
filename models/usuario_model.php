@@ -10,10 +10,10 @@ class Usuario_Model extends Model
         header('content-type: application/json; charset=utf-8');
 
         if(isset($_GET['callback'])){
-            $sth = $this->db->prepare("SELECT identificacion, usuario FROM clientes WHERE 
+            $sth = $this->db->prepare("SELECT identificacion, usuario FROM cliente WHERE 
                 usuario= :login AND clave=:password and tipocliente = 3");            
         }else{
-            $sth = $this->db->prepare("SELECT identificacion, usuario FROM clientes WHERE 
+            $sth = $this->db->prepare("SELECT identificacion, usuario FROM cliente WHERE 
                     usuario= :login AND clave=:password and tipocliente = 1 or tipocliente = 4");            
         }
         
@@ -37,11 +37,11 @@ class Usuario_Model extends Model
     }
 
     public function listaDeUsuarios($filtro){
-        return $this->db->select('SELECT * FROM clientes '.$filtro);
+        return $this->db->select('SELECT * FROM cliente '.$filtro);
     }
 
     public function crearUsuario($data){
-        return $this->db->insert('clientes',
+        return $this->db->insert('cliente',
                 array(
                     'usuario' =>$data['usuario'],
                     'clave' =>$data['password'],
@@ -66,7 +66,7 @@ class Usuario_Model extends Model
     }
 
     public function actualizarUsuario($data){
-        $rows = $this->db->update('clientes',
+        $rows = $this->db->update('cliente',
                 array(
                     'usuario' => $data['usuario'],
                     'clave' => $data['clave'],
